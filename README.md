@@ -126,13 +126,12 @@ These plots were generated on the local machine using the benchmarking kit.
 Raw CSV: `ValorMM-Bench/bench_out/results.csv`
 
 **Latency vs max_new_tokens**  
-![Latency vs tokens](docs/perf-latency-vs-tokens.png)
+![Latency vs tokens](ValorMM-Bench/docs/perf-latency-vs-tokens.png)
 
 **Latency vs max_image_edge**  
-![Latency vs image size](docs/perf-latency-vs-imageedge.png)
+![Latency vs image size](ValorMM-Bench/docs/perf-latency-vs-imageedge.png)
 
-**Approx. Peak VRAM vs max_image_edge (if recorded)**  
-![VRAM vs image size](docs/perf-vram-vs-imageedge.png)
+
 
 
 
