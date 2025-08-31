@@ -57,11 +57,14 @@ Most AI chat tools require API keys and upload your files to the cloud. **ValorM
 
 ## UI Screenshots
 
-> Replace these placeholders with your own screenshots after you run the app.
+Below are screenshots captured from the local app.
 
-- **Chat screen** (attachments + streaming):
-  
-  ![Chat UI](./docs/ui-chat.png)
+**Chat (1):**  
+![Chat UI 1](docs/ui-chat1.jpg)
+
+**Chat (2):**  
+![Chat UI 2](docs/ui-chat2.jpg)
+
 
 ---
 
@@ -117,22 +120,40 @@ npm run dev
 
 ---
 
-## Performance & Tuning (Guidance)
+## Performance & Tuning (Your Results)
 
-Below are **illustrative** measurements to guide your settings on an RTX 3050 Ti 4 GB with Qwen2‑VL‑2B. Actual results vary by driver, background apps, and content.
-
-- **Reduce latency** by lowering `max_new_tokens` or `max_image_edge`.  
-- **Prevent OOM** by setting `quant_4bit=True` (default) and `max_image_edge` to **768** or **640** for large images.  
-- **CPU fallback:** set `use_cpu=True` (much slower, but safe).
+These plots were generated on the local machine using the benchmarking kit.  
+Raw CSV: `ValorMM-Bench/bench_out/results.csv`
 
 **Latency vs max_new_tokens**  
-![Latency vs tokens](./docs/perf-latency-vs-tokens.png)
+![Latency vs tokens](docs/perf-latency-vs-tokens.png)
 
-**Latency vs image size**  
-![Latency vs image size](./docs/perf-latency-vs-imageedge.png)
+**Latency vs max_image_edge**  
+![Latency vs image size](docs/perf-latency-vs-imageedge.png)
 
-**Approx. VRAM vs image size (4‑bit)**  
-![VRAM vs image size](./docs/perf-vram-vs-imageedge.png)
+**Approx. Peak VRAM vs max_image_edge (if recorded)**  
+![VRAM vs image size](docs/perf-vram-vs-imageedge.png)
+
+### Summary Table
+
+| max_image_edge | max_new_tokens | rounds | avg_http_ms | avg_model_latency_ms | avg_peak_vram_mb | files |
+|---:|---:|---:|---:|---:|---:|---|
+| 640 | 128 | 3 | 6207 | 6143 |  | ui-chat.png |
+| 640 | 256 | 3 | 4694 | 4670 |  | ui-chat.png |
+| 640 | 384 | 3 | 4851 | 4835 |  | ui-chat.png |
+| 640 | 512 | 3 | 4708 | 4688 |  | ui-chat.png |
+| 768 | 128 | 3 | 924 |  |  | ui-chat.png |
+| 768 | 256 | 3 | 1005 |  |  | ui-chat.png |
+| 768 | 384 | 3 | 950 |  |  | ui-chat.png |
+| 768 | 512 | 3 | 865 |  |  | ui-chat.png |
+| 896 | 128 | 3 | 865 |  |  | ui-chat.png |
+| 896 | 256 | 3 | 803 |  |  | ui-chat.png |
+| 896 | 384 | 3 | 816 |  |  | ui-chat.png |
+| 896 | 512 | 3 | 831 |  |  | ui-chat.png |
+| 1024 | 128 | 3 | 3884 | 3864 |  | ui-chat.png |
+| 1024 | 256 | 3 | 4115 | 4093 |  | ui-chat.png |
+| 1024 | 384 | 3 | 3885 | 3866 |  | ui-chat.png |
+| 1024 | 512 | 3 | 3952 | 3935 |  | ui-chat.png |
 
 ---
 
