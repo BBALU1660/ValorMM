@@ -1,0 +1,39 @@
+﻿@import "highlight.js/styles/github-dark.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme */
+:root {
+  --bg: #0b0d10;
+  --panel: #0f1216;
+  --fg: #eef2f6;
+  --muted: #8b98a7;
+  --border: #1c222b;
+  --bubble-user: #101826;
+  --bubble-assistant: #0e1620;
+  --accent: #7aa2ff;
+}
+
+html, body, #__next { height: 100%; }
+body { background: var(--bg); color: var(--fg); }
+
+/* Scrollbar */
+.scrollbar-thin::-webkit-scrollbar { width: 8px; height: 8px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background-color: #2a3240; border-radius: 20px; }
+
+/* Markdown */
+.markdown p { margin: 0.5rem 0; }
+.markdown h1, .markdown h2 { margin-top: 1rem; font-weight: 600; }
+.markdown code {
+  background: #0e151d; padding: .2rem .35rem; border-radius: .35rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.markdown pre { background: #0e151d; padding: 1rem; border-radius: .75rem; overflow: auto; border: 1px solid var(--border); }
+
+/* Bubbles */
+.bubble {
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+}
